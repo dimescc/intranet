@@ -1,0 +1,17 @@
+<?php
+echo "<p>Suche gestartet</p>";
+print "Welcome <b>" . $_GET ['user'] . "</b><br/>";
+print "Suchstring <b>" . $_GET ['searching'] . "</b><br/>";
+print "Wert <b>" . $_GET ['wert'] . "</b><br/>";
+
+include "scripts/bootstrap.php";
+
+(
+    'hostname' => SOLR_SERVER_HOSTNAME,
+    'login'    => SOLR_SERVER_USERNAME,
+    'password' => SOLR_SERVER_PASSWORD,
+    'port'     => SOLR_SERVER_PORT,
+);
+print "Hostname:", hostname;
+
+?>
