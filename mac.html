@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+<meta charset="utf-8">
+<title>Lokale Ressourcen</title>
+<link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
+<link rel="icon" href="pics/geraete.png">
+</head>
+
+<body>
+<div id="thepage">
+<header>
+<img src="/pics/geraete.png" style="object-fit:cover;
+        object-position: right;
+        width:160px;
+        height:auto;
+        border: solid 1px #CCC"/>
+<div class='firma'>Ressourcen @ Salpetergasse</div>
+<span style="color:#ff00ff">M</span><span style="color:#ff00cc">a</span><span style="color:#ff0099">c</span><span style="color:#ff0066"> </span><span style="color:#ff0033">A</span><span style="color:#ff0000">d</span><span style="color:#ff3300">r</span><span style="color:#ff6600">e</span><span style="color:#ff9900">s</span><span style="color:#ffcc00">s</span><span style="color:#ffff00">e</span><span style="color:#ccff00">n</span><span style="color:#99ff00">,</span><span style="color:#66ff00"> </span><span style="color:#33ff00">I</span><span style="color:#00ff00">P</span><span style="color:#00ff33">s</span><span style="color:#00ff66">,</span><span style="color:#00ff99"> </span><span style="color:#00ffcc">S</span><span style="color:#00ffff">e</span><span style="color:#00ccff">i</span><span style="color:#0099ff">t</span><span style="color:#0066ff">e</span><span style="color:#0033ff">n</span><span style="color:#0000ff">,</span><span style="color:#3300ff"> </span><span style="color:#6600ff">S</span><span style="color:#9900ff">e</span><span style="color:#cc00ff">r</span><span style="color:#ff00ff">v</span><span style="color:#ff00cc">e</span><span style="color:#ff0099">r</span>
+</header>
+
+ <nav>
+        <li><a href="http://www.dimes.cc" title="Home">Home</a></li>
+        <li><a href="http://thomas.dimes.cc" title="Thomas">Thomas</a></li>
+        <li><a href="http://jana.dimes.cc" title="Jana">Jana</a></li>
+	<li><a href="http://sara.dimes.cc" title="Sara">Sara</a></li>
+	<li><a href="http://mona.dimes.cc" title="Mona">Mona</a></li>
+    </nav><br/>
+
+
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-color: #B0C4DE;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myTable {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+  font-size: 18px;
+}
+
+#myTable th, #myTable td {
+  text-align: left;
+  padding: 12px;
+}
+
+#myTable tr {
+  border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+  background-color: #004B67;
+  color: #F8F8FF;
+}
+</style>
+</head>
+<body>
+
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Suche nach Geräten / MAC Adressen" title="Type in a name" autofocus>
+
+<table id="myTable">
+  <tr class="header">
+    <th style="width:15%;">Name</th>
+    <th style="width:15%;">Gerät/Typ</th>
+    <th style="width:25%;">MAC Addresse</th>
+    <th style="width:25%;">IP Adresse</th>
+    <th style="width:20%;">Hersteller/Kommentar</th>
+  </tr>
+  <tr>
+    <td>Intranet</td>
+    <td>NGinX</td>
+    <td><a href="http://www.dimes.cc">www.dimes.cc</a></td>
+    <td>10.1.2.207</td>
+    <td>Webserver</td>
+  </tr>
+  <tr>
+    <td>Sara</td>
+    <td>NGinX</td>
+    <td><a href="http://sara.dimes.cc">sara.dimes.cc</a></td>
+    <td>10.1.2.207</td>
+    <td>Webserver</td>
+  </tr>
+  <tr>
+    <td>Mona</td>
+    <td>NGinX</td>
+    <td><a href="http://mona.dimes.cc">mona.dimes.cc</a></td>
+    <td>10.1.2.207</td>
+    <td>Webserver</td>
+  </tr>
+  <tr>
+    <td>Thomas</td>
+    <td>NGinX</td>
+    <td><a href="http://thomas.dimes.cc">thomas.dimes.cc</a></td>
+    <td>10.1.2.207</td>
+    <td>Webserver</td>
+  </tr>
+  <tr>
+    <td>Jana</td>
+    <td>NGinX</td>
+    <td><a href="http://jana.dimes.cc">jana.dimes.cc</a></td>
+    <td>10.1.2.207</td>
+    <td>Webserver</td>
+  </tr>
+  <tr>
+    <td>Firewall</td>
+    <td>Firewall</td>
+    <td><a href="http://fw.dimes.cc">fw.dimes.cc</a></td>
+    <td>10.1.1.254</td>
+    <td>Webserver</td>
+  </tr>
+  <tr>
+    <td>Switch</td>
+    <td>Core Switch</td>
+    <td><a href="http://switch.dimes.cc">switch.dimes.cc</a></td>
+    <td>10.1.1.1</td>
+    <td>Webserver</td>
+  </tr>
+  <tr>
+    <td>Helium</td>
+    <td>HNT</td>
+    <td><a href="http://helium.dimes.cc">helium.dimes.cc</a></td>
+    <td>10.1.4.10</td>
+    <td>Miner</td>
+  </tr>
+  <tr>
+    <td>Drucker</td>
+    <td>Kyocera</td>
+    <td><a href="http://drucker.dimes.cc">drucker.dimes.cc</a></td>
+    <td>10.1.1.205</td>
+    <td>Printer</td>
+  </tr>
+  <tr>
+    <td>BUS</td>
+    <td>Biticono</td>
+    <td><a href="http://bus.dimes.cc">bus.dimes.cc</a></td>
+    <td>10.1.1.210</td>
+    <td>Automation</td>
+  </tr>
+  <tr>
+    <td>Rancher</td>
+    <td>SUSE</td>
+    <td><a href="http://rancher.dimes.cc">rancher.dimes.cc</a></td>
+    <td>10.1.2.209</td>
+    <td>Kubernetes</td>
+  </tr>
+  <tr>
+    <td>Uptime</td>
+    <td>Kuma</td>
+    <td><a href="http://uptime.dimes.cc">uptime.dimes.cc</a></td>
+    <td>10.1.2.207</td>
+    <td>Monitoring</td>
+  </tr>
+  <tr>
+    <td>SOLR</td>
+    <td>SUCHE</td>
+    <td><a href="http://solr.dimes.cc">solr.dimes.cc</a></td>
+    <td>10.1.2.207</td>
+    <td>Google</td>
+  </tr>
+  <tr>
+    <td>Thomas</td>
+    <td>iPhone 14</td>
+    <td>E2-94-11-0B-C7-B1</td>
+    <td>na</td>
+    <td>Apple</td>
+  </tr>
+  <tr>
+    <td>Thomas Work</td>
+    <td>Galaxy</td>
+    <td>D6-77-CE-53-8F-6D</td>
+    <td>na</td>
+    <td>Samsung</td>
+  </tr>
+  <tr>
+    <td>Thomas</td>
+    <td>iPad Pro</td>
+    <td>16-06-85-60-E3-89</td>
+    <td>na</td>
+    <td>Samsung</td>
+  </tr>
+  <tr>
+    <td>Jana</td>
+    <td>iPhone 12</td>
+    <td>4A-2C-7E-D6-8F-CE</td>
+    <td>na</td>
+    <td>Apple</td>
+  </tr>
+  <tr>
+    <td>TV GZ</td>
+    <td>WebOS</td>
+    <td>7C-64-6C-61-E9-F3</td>
+    <td>na</td>
+    <td>LG</td>
+  </tr>
+  <tr>
+    <td>Jana Work</td>
+    <td>iPhone 8</td>
+    <td>22-F3-53-D5-5F-45</td>
+    <td>na</td>
+    <td>Apple</td>
+  </tr>
+  <tr>
+    <td>Sara</td>
+    <td>iPhone 10</td>
+    <td>FE-59-89-30-C6-87</td>
+    <td>na</td>
+    <td>Apple</td>
+  </tr>
+  <tr>
+    <td>Sara</td>
+    <td>Laptop</td>
+    <td>F8-9E-94-20-03-00</td>
+    <td>na</td>
+    <td>Lenovo</td>
+  </tr>
+  <tr>
+    <td>Mona</td>
+    <td>iPad</td>
+    <td>22-79-2C-4C-30-16</td>
+    <td>na</td>
+    <td>Apple</td>
+  </tr>
+  <tr>
+    <td>rpZ-Uni</td>
+    <td>Pi Zero</td>
+    <td>B8-27-EB-8A-F9-62</td>
+    <td>10.1.1.201</td>
+    <td>Raspberry</td>
+  </tr>
+  <tr>
+    <td>Robbi</td>
+    <td>Saugroboter</td>
+    <td>B0-4A-39-26-B1-A0</td>
+    <td>10.1.1.11</td>
+    <td>Roborock</td>
+  </tr>
+  <tr>
+    <td>Core</td>
+    <td>Switch</td>
+    <td>28-87-BA-F3-AE-66</td>
+    <td>10.1.1.1</td>
+    <td>TP-Link</td>
+  </tr>
+  <tr>
+    <td>Firewall LAN</td>
+    <td>Gateway</td>
+    <td>28-87-BA-F3-AE-66</td>
+    <td>10.1.1.1</td>
+    <td>Protecteli</td>
+  </tr>
+  <tr>
+    <td>Firewall WAN</td>
+    <td>Gateway</td>
+    <td>00-E0-67-2B-DF-78</td>
+    <td>81.217.250.218</td>
+    <td>Protecteli</td>
+  </tr>
+  <tr>
+    <td>Firewall LAN 1</td>
+    <td>Gateway</td>
+    <td>00-E0-67:2B-DF-79</td>
+    <td>10.1.1.254</td>
+    <td>Protecteli</td>
+  </tr>
+  <tr>
+    <td>Firewall LAN 2</td>
+    <td>Gateway</td>
+    <td>00-E0-67:2B-DF-7A</td>
+    <td>10.1.2.254</td>
+    <td>Protecteli</td>
+  </tr>
+  <tr>
+    <td>Firewall LAN 3</td>
+    <td>Gateway</td>
+    <td> 00-E0-67:2B-DF-7B</td>
+    <td>10.1.3.254</td>
+    <td>Protecteli</td>
+  </tr>
+  <tr>
+    <td>Firewall LAN 4</td>
+    <td>Gateway</td>
+    <td>00-E0-67-2B-DF-7C</td>
+    <td>10.1.4.254</td>
+    <td>Protecteli</td>
+  </tr>
+  <tr>
+    <td>Firewall GW 2</td>
+    <td>Gateway</td>
+    <td>28-87-BA-F3-AE-66</td>
+    <td>10.1.2.1</td>
+    <td>Protecteli</td>
+  </tr>
+  <tr>
+    <td>Firewall GW 5</td>
+    <td>Gateway</td>
+    <td>28-87-BA-F3-AE-66</td>
+    <td>192.168.1.1</td>
+    <td>Protecteli</td>
+  </tr>
+  <tr>
+    <td>Firewall LAN 5</td>
+    <td>Gateway</td>
+    <td>00-E0-67-2B-DF-7D</td>
+    <td>192.168.1.254</td>
+    <td>Protecteli</td>
+  </tr>
+  <tr>
+    <td>Deco WZ</td>
+    <td>Mesh</td>
+    <td>E8-48-B8-24-80-94</td>
+    <td>10.1.1.24</td>
+    <td>TP-Link</td>
+  </tr>
+  <tr>
+    <td>Deco Büro</td>
+    <td>Mesh</td>
+    <td>E8-48-B8-24-80-20</td>
+    <td>10.1.1.24</td>
+    <td>TP-Link</td>
+  </tr>
+  <tr>
+    <td>Deco Keller</td>
+    <td>Mesh</td>
+    <td>E8-48-B8-24-7F-40</td>
+    <td>10.1.1.24</td>
+    <td>TP-Link</td>
+  </tr>
+  <tr>
+    <td>Deco Garage</td>
+    <td>Mesh</td>
+    <td>5C-A6-E6-31-28-CC</td>
+    <td>na</td>
+    <td>TP-Link</td>
+  </tr>
+  <tr>
+    <td>Helium WLAN</td>
+    <td>Miner</td>
+    <td>E4-5F-01-69-9F-87</td>
+    <td>10.1.1.51</td>
+    <td>Sensecap</td>
+  </tr>
+  <tr>
+    <td>Helium LAN</td>
+    <td>Miner</td>
+    <td>E4-5F-01-69-9F-86</td>
+    <td>10.1.4.10</td>
+    <td>Sensecap</td>
+  </tr>
+  <tr>
+    <td>Thomas</td>
+    <td>PC</td>
+    <td>00-D8-61-6F-DF-E6</td>
+    <td>10.1.1.31</td>
+    <td>Windows</td>
+  </tr>
+  <tr>
+    <td>Aussen</td>
+    <td>Homepod</td>
+    <td>AC-BC-B5-DC-00-6F</td>
+    <td>10.1.1.40</td>
+    <td>Apple</td>
+  </tr>
+  <tr>
+    <td>Küche</td>
+    <td>Homepod Mini</td>
+    <td>58-D3-49-2B-6D-65</td>
+    <td>10.1.1.40</td>
+    <td>Apple</td>
+  </tr>
+  <tr>
+    <td>PiHole</td>
+    <td>DNS</td>
+    <td>E4-5F-01-A4-70-66</td>
+    <td>10.1.1.176</td>
+    <td>Raspberry</td>
+  </tr>
+  <tr>
+    <td>Küche 2</td>
+    <td>Homepod Mini</td>
+    <td>F4-34-F0-2B-B5-F0</td>
+    <td>10.1.1.99</td>
+    <td>Apple</td>
+  </tr>
+  <tr>
+    <td>rpi8-Media</td>
+    <td>Pi</td>
+    <td>E4-5F-01-A4-70-66</td>
+    <td>10.1.1.207</td>
+    <td>Raspberry</td>
+  </tr>
+  <tr>
+    <td>rpi4-Control</td>
+    <td>Pi</td>
+    <td>E4-5F-01:FE-46-3E</td>
+    <td>10.1.2.209</td>
+    <td>Raspberry</td>
+  </tr>
+  <tr>
+    <td>rpi4-Web</td>
+    <td>Pi</td>
+    <td>E4-5F-01-FE-42-84</td>
+    <td>10.1.2.208</td>
+    <td>Raspberry</td>
+  </tr>
+  <tr>
+    <td>rpi4-Master</td>
+    <td>Pi</td>
+    <td>E4-5F-01-CA-13-08</td>
+    <td>10.1.2.206</td>
+    <td>Raspberry</td>
+  </tr>
+  <tr>
+    <td>rpi4-Spy</td>
+    <td>Pi</td>
+    <td>E4-5F-01-EE-24-6E</td>
+    <td>10.1.2.207</td>
+    <td>Raspberry</td>
+  </tr>
+  <tr>
+    <td>Kyocera</td>
+    <td>Drucker</td>
+    <td>00-17-C8-98-4A-C9</td>
+    <td>10.1.1.205</td>
+    <td>Kyocera</td>
+  </tr>
+  <tr>
+    <td>PV-Anlage</td>
+    <td>Gateway</td>
+    <td>CC-B1-82-C7-97-05</td>
+    <td>10.1.1.26</td>
+    <td>Huawai</td>
+  </tr>
+  <tr>
+    <td>Wer ist das?</td>
+    <td>iPhone</td>
+    <td>A8-51-AB-A6-DE-65</td>
+    <td>10.1.1.58</td>
+    <td>Apple</td>
+  </tr>
+  <tr>
+    <td>Wer ist das?</td>
+    <td>iPhone</td>
+    <td>58-D3-49-2B-6D-65</td>
+    <td>10.1.1.68</td>
+    <td>Apple</td>
+  </tr>
+  <tr>
+    <td>Wer ist das?</td>
+    <td>iPhone</td>
+    <td>F2-8C-83-B1-02-E8</td>
+    <td>10.1.1.97</td>
+    <td>Apple</td>
+  </tr>
+  <tr>
+    <td>MH202</td>
+    <td>BUS</td>
+    <td>00-03-50-A2-04-77</td>
+    <td>10.1.1.210</td>
+    <td>BTCino</td>
+  </tr>
+</table>
+
+<script>
+function myFunction() {
+  var input, filter, table, tr, name, type, mac, ipa, marke, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    name = tr[i].getElementsByTagName("td")[0];
+    type = tr[i].getElementsByTagName("td")[1];
+    mac = tr[i].getElementsByTagName("td")[2];
+    ipa = tr[i].getElementsByTagName("td")[3];
+    marke = tr[i].getElementsByTagName("td")[4];
+    if (name || type || mac || ipa || marke) {
+      txtValue_name = name.textContent || name.innerText;
+      txtValue_type = type.textContent || type.innerText;
+      txtValue_mac = mac.textContent || mac.innerText;
+      txtValue_ipa = ipa.textContent || ipa.innerText;
+      txtValue_marke = marke.textContent || marke.innerText;
+      if (txtValue_name.toUpperCase().indexOf(filter) > -1 || txtValue_type.toUpperCase().indexOf(filter) > -1 || txtValue_mac.toUpperCase().indexOf(filter) > -1 || txtValue_ipa.toUpperCase().indexOf(filter) > -1 || txtValue_marke.toUpperCase().indexOf(filter) > -1){
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+</script>
+
+</body>
+
+<footer>
+        <p>2023 | &copy; Thomas</p>
+</footer>
+
+</html>

@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Befehle</title>
+<link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
+<link rel="icon" href="pics/geraete.png">
+</head>
+<body>
+<div id="thepage">
+<header>
+<img src="/pics/geraete.png" style="object-fit:cover;
+        object-position: right;
+        width:140px;
+        height:auto;
+        border: solid 1px #CCC"/>
+<div class='firma'>Befehle</div>
+<span style="color:#ff00ff">L</span><span style="color:#ff00cc">i</span><span style="color:#ff0099">n</span><span style="color:#ff0066">u</span><span style="color:#ff0033">x</span><span style="color:#ff0000">,</span><span style="color:#ff3300"> </span><span style="color:#ff6600">S</span><span style="color:#ff9900">a</span><span style="color:#ffcc00">l</span><span style="color:#ffff00">t</span><span style="color:#ccff00">,</span><span style="color:#99ff00"> </span><span style="color:#66ff00">J</span><span style="color:#33ff00">a</span><span style="color:#00ff00">v</span><span style="color:#00ff33">a</span><span style="color:#00ff66">,</span><span style="color:#00ff99"> </span><span style="color:#00ffcc">P</span><span style="color:#00ffff">H</span><span style="color:#00ccff">P</span><span style="color:#0099ff">,</span><span style="color:#0066ff"> </span><span style="color:#0033ff">Y</span><span style="color:#0000ff">A</span><span style="color:#3300ff">M</span><span style="color:#6600ff">L</span><span style="color:#9900ff">,</span><span style="color:#cc00ff"> </span><span style="color:#ff00ff">.</span><span style="color:#ff00cc">.</span><span style="color:#ff0099">.</span>
+</header>
+
+ <nav>
+        <li><a href="http://www.dimes.cc" title="Home">Home</a></li>
+        <li><a href="http://thomas.dimes.cc" title="Thomas">Thomas</a></li>
+        <li><a href="http://jana.dimes.cc" title="Jana">Jana</a></li>
+        <li><a href="http://sara.dimes.cc" title="Sara">Sara</a></li>
+        <li><a href="http://mona.dimes.cc" title="Mona">Mona</a></li>
+    </nav><br/>
+
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-color: #B0C4DE;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myTable {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+  font-size: 18px;
+}
+
+#myTable th, #myTable td {
+  text-align: left;
+  padding: 12px;
+}
+
+#myTable tr {
+  border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+  background-color: #004B67;
+  color: #F8F8FF;
+}
+</style>
+</head>
+<body>
+
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Befehl, Funktion oder Sprache (z.B. SALT-Scheduler, Linux, salt-pillar)" title="Type in a command" autofocus>
+<a href="salt_functions.html" title="SALT">SALT Funktionen</a>
+
+<table id="myTable">
+  <tr class="header">
+    <th style="width:40%;">Befehl</th>
+    <th style="width:45%;">Funktion</th>
+    <th style="width:15%;">Sprache</th>
+  </tr>
+  <tr>
+    <td>----- SALT -----</td>
+    <td>----------</td>
+    <td>----------</td>
+  </tr>
+  <tr>
+    <td>salt 'ID*' state.apply</td>
+    <td>Führt den Highstae am Minion ID aus</td>
+    <td>SALT</td>
+  </tr>
+  <tr>
+    <td>salt 'ID*' state.sls nginx</td>
+    <td>Installiert die Rolle nginx am Minion</td>
+    <td>SALT</td>
+  </tr>
+  <tr>
+    <td>salt-call state.sls nginx</td>
+    <td>installiert die Rolle nginx am Minion</td>
+    <td>SALT</td>
+  </tr>
+  <tr>
+    <td>sudo salt '*' state.sls tools.cputemp</td>
+    <td>Zeigt von allen Minions die CPU Temperatur</td>
+    <td>SALT</td>
+  </tr>
+  <tr>
+    <td>sudo salt '*' state.highstate</td>
+    <td>Highstate ausspielen</td>
+    <td>SALT</td>
+  </tr>
+  <tr>
+    <td>sudo salt-call state.show_highstate</td>
+    <td>Highstate anzeigen vom Minion</td>
+    <td>SALT</td>
+  </tr>
+  <tr>
+    <td>sudo salt '*' state.apply --state-output=terse</td>
+    <td>Highstate ausspielen, kurzform Ausgabe</td>
+    <td>SALT</td>
+  </tr>
+  <tr>
+    <td>sudo salt '*' status.loadavg</td>
+    <td>Zeige alle Serverauslastungen</td>
+    <td>SALT</td>
+  </tr>
+  <tr>
+    <td>sudo salt-run manage.status</td>
+    <td>Status aller Minions</td>
+    <td>SALT</td>
+  </tr>
+  <tr>
+    <td>sudo salt '*' status.uptime</td>
+    <td>Uptime aller Minions</td>
+    <td>SALT</td>
+  </tr>
+  <tr>
+    <td>sudo salt '*' status.diskusage /</td>
+    <td>HDD Festplattenspeicher aller Minions</td>
+    <td>SALT</td>
+  </tr>
+  <tr>
+    <td>sudo salt-call -l debug state.apply</td>
+    <td>Debug Highstate</td>
+    <td>SALT</td>
+  </tr>
+  <tr>
+    <td>sudo salt '*' grains.items</td>
+    <td>Grains anzeigen</td>
+    <td>SALT-Grain</td>
+  </tr>
+  <tr>
+    <td>sudo salt -G 'os:Debian' test.ping</td>
+    <td>Grains nutzen</td>
+    <td>SALT-Grain</td>
+  </tr>
+  <tr>
+    <td>sudo salt '*' pillar.get branch</td>
+    <td>Pillar Branch anzeigen</td>
+    <td>SALT-Pillar</td>
+  </tr>
+  <tr>
+    <td>sudo salt '*' pillar.ls</td>
+    <td>Pillars anzeigen</td>
+    <td>SALT-Pillar</td>
+  </tr>
+  <tr>
+    <td>sudo salt '*' pillar.items</td>
+    <td>Pillar Items</td>
+    <td>SALT-Pillar</td>
+  </tr>
+  <tr>
+    <td>sudo salt-run jobs.last_run target=rpiZ-Uni</td>
+    <td>Job letztes mal gelaufen</td>
+    <td>SALT-Jobs</td>
+  </tr>
+  <tr>
+    <td>sudo salt-run jobs.active target=rpiZ-Uni</td>
+    <td>Aktivierte Jobs zeigen</td>
+    <td>SALT-Jobs</td>
+  </tr>
+  <tr>
+    <td>sudo salt-run jobs.list_jobs search_target='rpiZ*'</td>
+    <td>Jobliste anzeigen</td>
+    <td>SALT-Jobs</td>
+  </tr>
+  <tr>
+    <td>sudo salt '*' service.start httpd</td>
+    <td>Webserver remote starten</td>
+    <td>SALT-Services</td>
+  </tr>
+  <tr>
+    <td>sudo salt '*' pkg.version mutt</td>
+    <td>Paketversion anzeigen</td>
+    <td>SALT-Packages</td>
+  </tr>
+  <tr>
+    <td>sudo salt '*' status.loadavg</td>
+    <td>CPU Auslastung anzeigen</td>
+    <td>SALT</td>
+  </tr>
+  <tr>
+    <td>sudo salt '*' cp.get_url http://ipinfo.io/ip /home/pi/ip.html</td>
+    <td>GetUrl, IP-Info speichern lokal</td>
+    <td>SALT</td>
+  </tr>
+  <tr>
+    <td>sudo salt-run fileserver.file_list</td>
+    <td>Fileserver Liste anzeigen</td>
+    <td>SALT</td>
+  </tr>
+  <tr>
+    <td>sudo salt-run fileserver.file_list saltenv=dev backend=git</td>
+    <td>Alle Git Ressourcen anzeigen</td>
+    <td>SALT</td>
+  </tr>
+  <tr>
+    <td>sudo salt '*' status.w</td>
+    <td>Alle eingeloggten User anzeigen anzeigen</td>
+    <td>SALT</td>
+  </tr>
+
+
+
+
+
+  <tr>
+    <td>----- SECURITY -----</td>
+    <td>----------</td>
+    <td>----------</td>
+  </tr>
+  <tr>
+    <td><a href:"https://gbhackers-com.cdn.ampproject.org/c/s/gbhackers.com/hacking-tools-list/amp/">ALLE Hacker Befehle</a></td>
+    <td>100 Tools für Hacker</td>
+    <td>SECURITY</td>
+  </tr>
+
+
+
+
+
+  <tr>
+    <td>----- LINUX -----</td>
+    <td>----------</td>
+    <td>----------</td>
+  </tr>
+  <tr>
+    <td>0 7 * * * /path_to_script/send_email.sh</td>
+    <td>führt jeden Tag das Script send_mail aus</td>
+    <td>Cron</td>
+  </tr>
+  <tr>
+    <td>service --status-all</td>
+    <td>Zeigt alle aktiven Services an</td>
+    <td>Linux</td>
+  </tr>
+  <tr>
+    <td>ps aufx | sort -nr -k 4 | head -5</td>
+    <td>Listet die 5 Prozesse mit höchster Auslastung</td>
+    <td>Linux</td>
+  </tr>
+  <tr>
+    <td>alias l="sudo ls -lha $1"</td>
+    <td>macht den ls Befehl. Oder file "l" unter /bin ablegen mit "sudo ls -lha $1" als text</td>
+    <td>Linux</td>
+  </tr>
+  <tr>
+    <td>CTRL + SHIFT + K</td>
+    <td>Zeile löschen</td>
+    <td>NANO</td>
+  </tr>
+  <tr>
+    <td>CTRL + W (wiederholen und ENTER)</td>
+    <td>String suchen (nächsten)</td>
+    <td>NANO</td>
+  </tr>
+  <tr>
+    <td>du /media</td>
+    <td>Größe eines Verzeichnisses anzeigen</td>
+    <td>LINUX</td>
+  </tr>
+  <tr>
+    <td>ls /usr/share/nginx/html/* | wc -l</td>
+    <td>Dateien, Files zählen in Ordner</td>
+    <td>LINUX</td>
+  </tr>
+  <tr>
+    <td>journalctl -u cron.service</td>
+    <td>Crontab Logs</td>
+    <td>LINUX</td>
+  </tr>
+  <tr>
+    <td>dpkg --list</td>
+    <td>Liste alle installieren Services auf</td>
+    <td>LINUX</td>
+  </tr>
+  <tr>
+    <td>sudo scp /opt/limesurvey/backup.tar.gz pi@10.1.2.206:/srv/salt</td>
+    <td>Kopiere file mit SCP auf einen remote host</td>
+    <td>LINUX</td>
+  </tr>
+  <tr>
+    <td>sudo tar -xzvf lime_backup.tar.gz -C /tmp/lime_backup/</td>
+    <td>Entpacke tar file (Backup) in tmp Verzeichnis</td>
+    <td>LINUX</td>
+  </tr>
+  <tr>
+    <td>sudo apt remove xscreensaver</td>
+    <td>Deinstalliere und lösche Packet</td>
+    <td>LINUX</td>
+  </tr>
+  <tr>
+    <td>sudo apt-get --purge remove xserver</td>
+    <td>Lösche und entferne xserver</td>
+    <td>LINUX</td>
+  </tr>
+  <tr>
+    <td>sudo apt-get autoremove</td>
+    <td>Lösche und entferne Abhängigkeiten (nicht mehr benötigte Libs)</td>
+    <td>LINUX</td>
+  </tr>
+  <tr>
+    <td>find /var/ -name FILE</td>
+    <td>Suche File in Folder</td>
+    <td>LINUX</td>
+  </tr>
+
+
+
+
+
+  <tr>
+    <td>----- NGINX -----</td>
+    <td>----------</td>
+    <td>----------</td>
+  </tr>
+  <tr>
+    <td>sudo salt '*' nginx.configtest</td>
+    <td>Konfiguration prüfen</td>
+    <td>NGINX</td>
+  </tr>
+  <tr>
+    <td>sudo salt '*' nginx.status</td>
+    <td>Status aller NGINX Server</td>
+    <td>NGINX</td>
+  </tr>
+  <tr>
+    <td>sudo salt '*' nginx.version</td>
+    <td>Alle NGINX Versionen anzeigen</td>
+    <td>NGINX</td>
+  </tr>
+  <tr>
+    <td>sudo apt purge nginx nginx-common nginx-core</td>
+    <td>NGINX Installation verwerfen</td>
+    <td>NGINX</td>
+  </tr>
+
+
+
+  <tr>
+    <td>----- CSS -----</td>
+    <td>----------</td>
+    <td>----------</td>
+  </tr>
+  <tr>
+    <td><a href="https://werner-zenk.de/tools/regenbogentext_generator.php">Regenbogengenerator</a></td>
+    <td>Regenbogen Generator</td>
+    <td>CSS</td>
+  </tr>
+
+
+
+
+
+  <tr>
+    <td>----- KUBERNETES -----</td>
+    <td>----------</td>
+    <td>----------</td>
+  </tr>
+  <tr>
+    <td>sudo docker rm -f <Container_ID></td>
+    <td>Container löschen</td>
+    <td>DOCKER<tr>
+  </tr>
+  <tr>
+    <td>kubectl -n cattle-system describe pods -l app=rancher</td>
+    <td>Details zu Pods anzeigen</td>
+    <td>KUBERNETES</td>
+  </tr>
+  <tr>
+    <td>kubectl get pods --all-namespaces</td>
+    <td>Alle Pods auflisten</td>
+    <td>KUBERNETES</td>
+  </tr>
+  <tr>
+    <td>sudo docker run -it solr bash</td>
+    <td>In Docker Container verbinden (dann su root)</td>
+    <td>DOCKER</td>
+  </tr>
+  <tr>
+    <td>sudo docker run -it -u root solr bash</td>
+    <td>In Docker Container als root verbinden</td>
+    <td>DOCKER</td>
+  </tr>
+  <tr>
+    <td>sudo docker cp <containerId>:/path/in/container /path/on/host</td>
+    <td>Files von einem container kopieren (copy)</td>
+    <td>DOCKER</td>
+  </tr>
+
+
+
+
+  <tr>
+    <td>----- PYTHON -----</td>
+    <td>----------</td>
+    <td>----------</td>
+  </tr>
+  <tr>
+    <td>inText = input("Bitte geben Sie eine Zahl ein: ")</td>
+    <td>Input in Variable</td>
+    <td>PYTHON</td>
+  </tr>
+  <tr>
+    <td>inNumber = float(inText)</td>
+    <td>Eine Float Zahl definieren</td>
+    <td>PYTHON</td>
+  </tr>
+  <tr>
+    <td>print("Das Quadrat dieser Zahl ist", inNumber ** 2)</td>
+    <td>Ausgabe des Quadrats der Zahl</td>
+    <td>PYTHON</td>
+  </tr>
+
+
+  <tr>
+    <td>----- PHP -----</td>
+    <td>----------</td>
+    <td>----------</td>
+  </tr>
+
+
+  <tr>
+    <td>if ($current_time >= 12 && $current_time <= 16) {...}</td>
+    <td>IF Abfrage</td>
+    <td>PHP</td>
+  </tr>
+  <tr>
+    <td>&lt;?php ... ?&gt;</td>
+    <td>PHP Code</td>
+    <td>PHP</td>
+  </tr>
+  <tr>
+    <td>echo "&lt;tr&gt;&lt;td&gt;" . $row["id"]. "&lt;/td&gt;&lt;td&gt;" . $row["firstname"]. "&lt;/td&gt;&lt;/tr&gt;";</td>
+    <td>Ausgabe meherer Strings als Tabelle</td>
+    <td>PHP</td>
+  </tr>
+  <tr>
+    <td>$current_day = date(l);</td>
+    <td>Heute in Variable</td>
+    <td>PHP</td>
+  </tr>
+  <tr>
+    <td>$conn = new mysqli($servername, $username, $password, $dbname);</td>
+    <td>SQL Verbindung</td>
+    <td>PHP</td>
+  </tr>
+  <tr>
+    <td>$sql = "SELECT id, firstname, FROM Guests"; $result = $conn-&gt;query($sql);</td>
+    <td>SQL Abfrage</td>
+    <td>PHP</td>
+  </tr>
+
+
+
+
+  <tr>
+    <td>----- JAVA Script -----</td>
+    <td>----------</td>
+    <td>----------</td>
+  </tr>
+
+
+  <tr>
+    <td>var input, filter, table, tr;</td>
+    <td>Variablen Definition</td>
+    <td>JAVA</td>
+  </tr>
+  <tr>
+    <td>input = document.getElementById("myInput");</td>
+    <td>Mit getDocument HTML Elemente auslesen</td>
+    <td>JAVA</td>
+  </tr>
+
+
+
+
+
+  <tr>
+    <td>----- MYSQL -----</td>
+    <td>----------</td>
+    <td>----------</td>
+  </tr>
+  <tr>
+    <td>sudo mysql -u root</td>
+    <td>Einloggen MariadB, MYSQL</td>
+    <td>MYSQL</td>
+  </tr>
+
+
+
+
+  <tr>
+    <td>----- HTML -----</td>
+    <td>----------</td>
+    <td>----------</td>
+  </tr>
+  <tr>
+    <td><a href="https://werner-zenk.de/html/_html.php">Befehle</a></td>
+    <td>Tags, Table, Figure, code, li, ...</td>
+    <td>HTML</td>
+  </tr>
+
+
+
+
+  <tr>
+    <td>----- Formeln -----</td>
+    <td>----------</td>
+    <td>----------</td>
+  </tr>
+
+
+  <tr>
+    <td>a² + b² = c²</td>
+    <td>Der Satz von Pythagoras</td>
+    <td>Formeln</td>
+  </tr>
+
+
+</table>
+
+<script>
+function myFunction() {
+  var input, filter, table, tr, Befehl, Funktion, Sprache, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    Befehl = tr[i].getElementsByTagName("td")[0];
+    Funktion = tr[i].getElementsByTagName("td")[1];
+    Sprache = tr[i].getElementsByTagName("td")[2];
+    if (Befehl || Funktion || Sprache) {
+      txtValue_Befehl = Befehl.textContent || Befehl.innerText;
+      txtValue_Funktion = Funktion.textContent || Funktion.innerText;
+      txtValue_Sprache = Sprache.textContent || Sprache.innerText;
+      if (txtValue_Befehl.toUpperCase().indexOf(filter) > -1 || txtValue_Funktion.toUpperCase().indexOf(filter) > -1 || txtValue_Sprache.toUpperCase().indexOf(filter) > -1){
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+</script>
+</body>
+
+<footer>
+        <p>2023 | &copy; Thomas</p>
+</footer>
+
+</html>

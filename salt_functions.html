@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>SALT Functions</title>
+<link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
+<link rel="icon" href="pics/geraete.png">
+</head>
+<body>
+<div id="thepage">
+<header>
+<img src="/pics/geraete.png" style="object-fit:cover;
+        object-position: right;
+        width:140px;
+        height:auto;
+        border: solid 1px #CCC"/>
+<div class='firma'>Salt Functions</div>
+<span style="color:#ff00ff">S</span><span style="color:#ff00cc">A</span><span style="color:#ff0099">L</span><span style="color:#ff0066">T</span>
+</header>
+
+ <nav>
+        <li><a href="http://www.dimes.cc" title="Home">Home</a></li>
+        <li><a href="http://thomas.dimes.cc" title="Thomas">Thomas</a></li>
+        <li><a href="http://jana.dimes.cc" title="Jana">Jana</a></li>
+        <li><a href="http://sara.dimes.cc" title="Sara">Sara</a></li>
+        <li><a href="http://mona.dimes.cc" title="Mona">Mona</a></li>
+    </nav><br/>
+
+
+</style>
+</head>
+<body>
+
+copy_commands.txt:<br>
+  file.managed:<br>
+    - name: /home/pi/commands.txt<br>
+    - source: salt://commands.txt<br>
+    - user: root<br><br>
+ 
+motd_config_remove:<br>
+  file.absent:<br>
+    - name: /etc/motd<br><br>
+ 
+/etc/systemd/timesyncd.conf:<br>
+  file.append:<br>
+    - name: /etc/motd<br>
+    - text:<br>
+      - FallbackNTP=0.pool.ntp.org 0.us.pool.ntp.org<br><br>
+ 
+install_mutt:<br>
+  pkg.installed: ODER: rpm.installed:<br>
+    - name: mutt<br><br>
+ 
+{% if not salt['file.directory_exists' ]('/home/pi/.mutt/cache/headers') %}<br>
+/home/pi/.mutt/cache:<br>
+  file.directory:<br>
+    - name: /home/pi/.mutt/cache<br>
+    - mode: 755<br>
+    - user: engrnfs<br>
+    - group: nogroup<br>
+    - makedirs: true<br>
+{% else %}<br>
+{% endif %}<br><br>
+ 
+salt-master:<br>
+  service.running:<br>
+    - enable: True<br>
+    - reload: True<br>
+    - require:<br>
+      - file: /etc/exports<br>
+      - user: nfs_engr_user<br><br>
+ 
+set_nfs_user_pwd:<br>
+  cmd.script:<br>
+    - name: /root/bin/setnfsuser.sh<br><br>
+ 
+befehl_ls_mod:<br>
+  cmd.run:<br>
+    - names:<br>
+      - chmod +x /bin/l<br>
+      - apt-get install libraspberrypi-bin<br>
+    - require:<br>
+      - file: copy_tempsensor.py<br><br>
+
+running_as_root:<br>
+  cmd.run:<br>
+    - name: pwd<br>
+    - cwd: /Users/Carlos/Desktop<br><br>
+
+running_as_user:<br>
+  cmd.run:<br>
+    - name: pwd<br>
+    - cwd: /Users/Carlos/Desktop<br>
+    - runas: Carlos<br><br>
+    
+job_scheduler:<br>
+schedule.present:<br>
+    - function: state.sls<br>
+    - job_args:<br>
+      - tools.copy<br>
+    - minutes: 10<br><br>
+ 
+backup-spy-8:<br>
+  cron.present:<br>
+    - name: /usr/share/nginx/html/backup.sh >> /home/pi/backup.log 2>&1<br>
+    - user: root<br>
+    - minute: 00<br>
+    - hour: 08<br>
+    - daymonth: '*'<br>
+    - month: '*'<br>
+    - dayweek: '*'<br><br>
+ 
+nfs_engr_user:<br>
+  user.present:<br>
+    - name: engrnfs<br>
+    - fullname: Engineering NFSshareUser<br>
+    - shell: /bin/bash<br>
+    - home: /home/engrnfs<br>
+    - uid: 1101<br>
+    - gid: 65534<br><br>
+
+
+</body>
+
+<footer>
+        <p>2023 | &copy; Thomas</p>
+</footer>
+
+</html>
