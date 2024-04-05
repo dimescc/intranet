@@ -1,0 +1,161 @@
+/* reset margin, padding & co. */
+* {
+margin: 0;
+padding: 0;
+-moz-box-sizing: padding-box;
+-webkit-box-sizing: padding-box;
+box-sizing: padding-box;
+-moz-box-sizing: border-box;
+-webkit-box-sizing: border-box;
+box-sizing: border-box;
+}
+
+/* render html5 elements as block */
+header, footer, section, aside, nav, article { display: block;}
+
+body {
+background-color: #ffffff;
+font-size: 1em;
+font-family: 'Roboto Condensed', sans-serif;
+color:#0f0f0f;
+}
+
+a {color: #0c0c0c;}
+a:hover {color: #c0c0c0;}
+a:active { color:#800000;}
+
+h1, h2, .firma {
+font-family: 'Nunito', sans-serif;
+margin: 0px 0px 10px 0px;
+}
+
+h1 {
+font-size: 1.8em;
+}
+
+h2 {
+font-size: 1.5em;
+}
+
+p {
+margin: 5px 0px 12px 0px;
+line-height: 1.5em;
+}
+	
+
+/* ---------- Menü rechts unterer Teil-------------- */
+#thepage {
+margin: 10px 10px 10px 10px;
+#width: 880px;
+min-height: 100vh;
+background-color: #CAE1FF;
+box-shadow: 20px 20px 90px #888888;
+}
+
+/* ----------header for logo-------------- */
+header {
+	padding: 20px 40px 40px 40px;
+	background-color: #004B67;
+	text-shadow: 4px 2px 10px #a0a0a0;
+	color: #f0f0f0;
+}
+
+header img {
+	float: right;
+	border-radius: 4px;
+	-moz-border-radius: 4px; /* Old Firefox */
+	box-shadow: 4px 2px 10px #a0a0a0;
+}
+
+.firma {
+	font-size: 2.5em;	
+	margin: 0px;
+}
+
+/* -------------- navigavtion: Menü Oben------------- */
+nav {
+font-size: 1em;
+background-color: #1874CD;
+color:#f0f0f0;
+}
+
+nav ul { 
+list-style-type: none; 
+margin:0;
+}
+
+nav li {
+display: inline;
+}
+
+nav a {
+display: inline-block;
+margin:0;
+color: #f0f0f0;
+border-right: 1px solid #f0f0f0;
+padding: 10px 40px;
+text-decoration: underline white 2px;
+}
+
+nav a:hover {
+color: #080808;
+}
+
+
+
+/* ----------------- normaler link ------------- */
+a.class1:link {
+color:#ff0000;
+text-decoration:none;
+border-right: none;
+}
+a.class1:visited {
+color:#0000ff;
+text-decoration:none;
+border-right: none;
+}
+a.class1:hover {
+color:#8A2BE2;
+font-weight:bold;
+font-size:1.1em;
+text-decoration:none;
+border-right: none;
+}
+
+
+
+
+
+/* ----------------- Content: Mitte, Hauptseite--------------------- */
+#content {
+float: left;
+width: 80%;
+padding: 20px 20px 0px 40px;
+min-height: 300px;
+background-color: #CAE1FF;
+border-right: 1px solid #C70151;
+}
+
+
+
+
+/* -------------- Menü Rechts Oberer Teil------------- */
+aside{
+float: right;
+width: 20%;
+padding: 20px 40px 0px 20px;
+background-color: #CAE1FF;
+}
+
+/* -----------footer--------------------------- */
+footer {
+#position: absolute;
+#bottom: 0;
+#width: 100%;
+#height: 80px;
+clear: both;
+padding: 20px 40px 20px 40px;
+background-color: #004B67;
+color:#f0f0f0;
+text-shadow: 4px 2px 10px #a0a0a0;
+}
