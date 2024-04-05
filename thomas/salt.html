@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+        <meta charset="utf-8">
+        <title>Salt</title>
+        <link rel="stylesheet" href="thomas.css" type="text/css" media="screen">
+	<link rel="icon" href="pics/thomas.jpg">
+</head>
+
+<body>
+   <div id="thepage">
+
+    <header>
+      <img src="pics/thomas.jpg" width="100">
+      <div class='firma'>THOMAS</div>
+      <p>Salt Befehle</p>
+    </header>
+
+
+    <nav>
+    <ul>
+        <li><a href="http://thomas.dimes.cc">Zurück</a></li>
+        <li><a href="mich.html">Persönliches</a></li>
+        <li><a href="hobbies.html">Hobbies</a></li>
+        <li><a href="salt.html">SALT</a></li>
+        <li><a href="pi.html">Pi</a></li>
+        <li><a href="rancher.html">Rancher ANL</a></li>
+        <li><a href="meta.html">Metasploit</a></li>
+        <li><a href="snmp.html">SNMP</a></li>
+        <li><a href="scripts/browser.php">Browser</a></li>
+        <li><a href="scripts/login.php">Login</a></li>
+    </nav>
+
+   <section id="content">
+        <h2>SALT Befehle</h2>
+	<p><a href="https://www.tutorialspoint.com/saltstack/saltstack_quick_guide.htm" class="class1">Salt - All You Need</a></p>
+        <p>sudo salt '*' state.highstate # Highstate ausspielen</p>
+        <p>sudo salt '*' state.apply --state-output=terse</p>
+        <p>sudo salt-call state.highstate</p>
+        <p>sudo salt-call state.show_highstate</p>
+        <p>sudo salt '*' status.loadavg</p>
+        <p>sudo salt-run manage.status</p>
+        <p>sudo salt '*' status.uptime</p>
+        <p>sudo salt '*' status.diskusage /</p>
+        <p>sudo salt '*' state.highstate saltenv=prod</p>
+        <h2>Grains</h2>
+        <p>sudo salt '*' grains.items</p>
+        <p>sudo salt -G 'os:Debian' test.ping</p>
+        <h2>Pillar</h2>
+        <p>sudo salt '*' pillar.get branch</p>
+        <p>sudo salt '*' pillar.ls</p>
+        <p>sudo salt '*' pillar.items</p>
+        <h2>Befehle</h2>
+        <p>sudo salt '*' cmd.run 'free -m'</p>
+        <p>salt-cp '*' prod/init.sls /home/pi</p>
+        <p>sudo salt '*' service.start httpd</p>
+        <p>sudo salt '*' pkg.version mutt</p>
+        <p>sudo salt '*' pkg.list_upgrades</p>
+        <p>sudo salt '*' pkg.upgrade</p>
+        <p>sudo sudo salt '*' status.cpuload</p>
+        <p>sudo salt '*' cp.get_url http://ipinfo.io/ip /home/pi/ip.html</p>
+        <p>sudo salt Minion1 pkg.install apache2</p>
+        <p>sudo salt '*' network.ip_addrs</p>
+        <p>sudo salt-run fileserver.file_list</p>
+        <p>sudo salt-run fileserver.file_list saltenv=prod</p>
+        <p>sudo salt-run fileserver.file_list saltenv=dev backend=git</p>
+        <p>sudo salt-run fileserver.file_list –git</p>
+</section>
+
+
+<aside>
+        <h2>Bereiche</h2>
+        <li><a href="http://www.dimes.cc" class="class1">Home</a></li>
+        <li><a href="http://sara.dimes.cc" class="class1">Sara</a></li>
+        <li><a href="http://mona.dimes.cc" class="class1">Mona</a></li>
+        <li><a href="http://jana.dimes.cc" class="class1">Jana</a></li>
+        <h2>Haus</h2>
+        <li><a href="http://rancher.dimes.cc">Rancher</a></li>
+        <li><a href="http://uptime.dimes.cc">Uptime</a></li>
+        <li><a href="http://solr.dimes.cc">Solr</a></li>
+        <h2>Links</h2>
+        <li><a href="https://portal.noe.gv.at" class="class1">Portal</a></li>
+        <li><a href="https://portal-test.noe.gv.at" class="class1">Test Portal</a></li>
+        <li><a href="https://www.networkchuck.com" class="class1">Chuck</a></li>
+</aside>
+
+<footer>
+        <p>2023 | &copy; Thomas</p>
+</footer>
+</div>
+</body>
+</html>
